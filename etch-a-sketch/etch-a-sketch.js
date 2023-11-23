@@ -1,15 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
   createPanel(16);
-  
-  createPanel(getSize());
+
+  let getSizeButton = document.getElementById("getSize");
+  getSizeButton.addEventListener("click", () => {
+    let size = document.getElementById("size").value;
+    createPanel(size);
+  });
 });
 
-function getSize () {    
-    size = document.getElementById("size").value;
-    return size;        
-}
-
-console.log(size);
+let color = "black";
+let rainbowColors = [
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "blue",
+    "indigo",
+    "violet",
+];
 
 let createPanel = (size) => {
   let panel = document.querySelector(".panel");
@@ -20,11 +28,31 @@ let createPanel = (size) => {
   let divs = size * size;
 
   for (let i = 0; i < divs; i++) {
-    let div = document.createElement("div");
-    div.style.border = "1px groove gray";    
-    div.addEventListener("mouseover", (e) => {
-      e.target.style.backgroundColor = "black";
-    });
+    let div = document.createElement("div");    
+    div.addEventListener("mouseover", chosenColor);
     panel.insertAdjacentElement("beforeend", div);
   }
 };
+
+let clearPanel = () => {
+    let divs = document.querySelectorAll(".panel div");
+    divs.forEach((div) => {
+        div.style.backgroundColor = "white";
+    });
+}
+
+function chosenColor () {
+    if (color === "random") {
+        this.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16);        
+    }
+    else if (color === "rainbow") {
+        this.style.backgroundColor = rainbowColors[Math.floor(Math.random() * rainbowColors.length)];
+    }
+    else {
+        this.style.backgroundColor = "black";
+    }
+}
+
+function changeColor(colorChoice) {
+    color = colorChoice;
+}

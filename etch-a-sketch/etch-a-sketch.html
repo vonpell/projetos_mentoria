@@ -18,16 +18,17 @@
     <div class="header">
       <h5 style="color: rgb(0, 128, 85)">Insert a Size</h5>      
       <input type="number" id="size" name="size" min="1" max="50"/>
-      <input type="button" class="btn btn-outline-success" onclick="getSize()" value="Create"></input>
+      <input type="button" class="btn btn-outline-success" id="getSize" onclick="clearPanel()" value="Create"></input>
     </form>
     </div>
 
     <div class="panel"></div>
+
     <div class="footer">
-      <button class="btn btn-outline-dark">Black</button>
-      <button class="btn btn-outline-danger">Random</button>
-      <button class="btn btn-outline-info">Rainbow</button>
-      <button class="btn btn-outline-warning">Eraser</button>
+      <button class="btn btn-outline-dark" onclick="changeColor('black')">Black</button>
+      <button class="btn btn-outline-danger" onclick="changeColor('random')">Random</button>
+      <button class="btn btn-outline-info" onclick="changeColor('rainbow')">Rainbow</button>
+      <button class="btn btn-outline-warning" onclick="clearPanel()">Eraser</button>
     </div>
   </body>
 </html>
