@@ -31,7 +31,7 @@
   width: 350px;
   height: 350px;  
   margin-top: 25px;
-  border: 2px solid black;
+  border: 2px solid rgba(92, 20, 20, 0.582);
   justify-content: space-between;
 }
 
@@ -55,6 +55,7 @@
 }
 
 .buttons {    
+  width: 125px;
   margin-top: 40px;
   font-size: 20px;
   background-color: rgba(0, 0, 0, 0.747);
