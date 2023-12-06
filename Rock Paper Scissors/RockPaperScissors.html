@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./RockPaperScissors.js"></script>
+    <link rel="stylesheet" href="./RockPaperScissors.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="title">Rock Paper Scissors</h1>
+
+      <div class="images">
+        <!-- Créditos: vecteezy.com -->
+        <div class="gameImages" id="playerImage"></div>
+        <div class="gameImages" id="computerImage"></div>
+      </div>
+
+      <div class="score">
+        <div id="roundMessage"></div>
+        <div id="resultado"></div>
+        <div>Score</div>
+      </div>
+
+      <div class="scoreResults">
+        <div class="scores">
+          <div id="playerScore" class="scoreDivs"></div>
+          <div>Jogador</div>
+        </div>
+        <div class="scores">
+          <div id="computerScore" class="scoreDivs"></div>
+          <div>Computador</div>
+        </div>
+      </div>
+
+      <div id="buttons">
+        <button id="rock" class="buttons" onclick="playRound(rock)">
+          Rock
+        </button>
+        <button id="paper" class="buttons" onclick="playRound(paper)">
+          Paper
+        </button>
+        <button
+          id="scissors"
+          class="buttons"
+          onclick="playRound(scissors)"
+        >
+          Scissors
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
